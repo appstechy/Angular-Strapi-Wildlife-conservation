@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_second_section_second_sections",
+  "info": {
+    "displayName": "second_section",
+    "icon": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
