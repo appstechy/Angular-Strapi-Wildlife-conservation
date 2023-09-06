@@ -1,0 +1,55 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": [
+        "http://localhost:1337/api/admins",
+        "http://localhost:1337/api/homes?populate[section][populate]=*",
+        "http://localhost:1337/api/aboutuses?populate=*",
+        "http://localhost:1337/api/galleries?populate[gallery][populate]=*",
+        "http://localhost:1337/api/ourteams?populate[team][populate]=*",
+        "http://localhost:1337/api/contactuses?populate[team][populate]=*",
+        "http://localhost:1337/api/headers?populate=*",
+        "http://localhost:1337/api/footers?populate[footer_links][populate]=*&populate[icons][populate]=*",
+        "http://localhost:1337/api/auth/local",
+        "http://localhost:1337/api/users",
+        "http://localhost:1337/api/events?populate[ongoing_events][populate]=*&populate[upcoming_events][populate]=*",
+        "http://localhost:1337/api/dashboards?populate=*"
+      ],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "1d",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}
