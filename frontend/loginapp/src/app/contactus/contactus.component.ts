@@ -50,6 +50,7 @@ export class ContactusComponent implements OnInit{
 
       this.service.submitContactUsForm(enteredData).subscribe((data)=>{
         alert("Sucessfully submitted.");
+        this.contactusForm.reset();
       },(error)=>console.log(error))
     } else{
       console.log("Invalid data");
